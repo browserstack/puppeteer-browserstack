@@ -16,7 +16,7 @@ const expect = require('chai').expect;
     };
     const browser = await puppeteer.connect({
     browserWSEndpoint:
-    `ws://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps))}`,
+    `wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps))}`,
     });
 
     /* 

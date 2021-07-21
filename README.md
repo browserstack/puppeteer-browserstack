@@ -75,4 +75,4 @@ You can see the [documentation for marking test status using REST API](https://w
 
 ## Facing issues?
 
-If you are facing any issue with any of the above or any other issue in trying to run your Playwright tests on BrowserStack, you can reach out to me directly at `sourav.k@browserstack.com` and I will be happy to debug your issues or at the least ensure that your issue becomes our top priority to resolve.
+If you are facing any issue with any of the above or any other issue in trying to run your Puppeteer tests on BrowserStack, you can [reach out to support](https://www.browserstack.com/contact#technical-support), select product as `Automate` and send us your query.
