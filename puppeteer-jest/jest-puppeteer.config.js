@@ -33,6 +33,6 @@ const caps_edge = {
 
 module.exports = {
   connect: {
-    browserWSEndpoint: `ws://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps_chrome))}`,
+    browserWSEndpoint: `wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps_chrome))}`,
   }
 }

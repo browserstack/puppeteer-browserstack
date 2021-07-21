@@ -7,7 +7,7 @@ const main = async (cap) => {
     cap['browserstack.accessKey'] = process.env.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY';
 
     const browser = await puppeteer.connect({
-      browserWSEndpoint:`ws://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(cap))}`,
+      browserWSEndpoint:`wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(cap))}`,
     });
 
     const page = await browser.newPage();
@@ -31,20 +31,20 @@ const main = async (cap) => {
 //  The following capabilities array contains the list of os/browser environments where you want to run your tests. You can choose to alter this list according to your needs
 const capabilities = [
 {
-  	'browser': 'chrome',
-    'browser_version': 'latest',
-    'os': 'osx',
-    'os_version': 'catalina',
-    'name': 'Chrome latest on Catalina',
-    'build': 'puppeteer-build-2'
+  'browser': 'chrome',
+  'browser_version': 'latest',
+  'os': 'osx',
+  'os_version': 'catalina',
+  'name': 'Chrome latest on Catalina',
+  'build': 'puppeteer-build-2'
 },
 {
-  	'browser': 'firefox',
-    'browser_version': 'latest',
-    'os': 'osx',
-    'os_version': 'catalina',
-    'name': 'Firefox latest on Catalina',
-    'build': 'puppeteer-build-2'
+  'browser': 'firefox',
+  'browser_version': 'latest',
+  'os': 'osx',
+  'os_version': 'catalina',
+  'name': 'Firefox latest on Catalina',
+  'build': 'puppeteer-build-2'
 },
 {
   'browser': 'edge',
@@ -55,20 +55,20 @@ const capabilities = [
   'build': 'puppeteer-build-2'
 },
 {
-    'browser': 'chrome',
-    'browser_version': 'latest-1',
-    'os': 'Windows',
-    'os_version': '10',
-    'name': 'Chrome latest-1 on Win10',
-    'build': 'puppeteer-build-2'
+  'browser': 'chrome',
+  'browser_version': 'latest-1',
+  'os': 'Windows',
+  'os_version': '10',
+  'name': 'Chrome latest-1 on Win10',
+  'build': 'puppeteer-build-2'
 },
 {
-    'browser': 'firefox',
-    'browser_version': 'latest-beta',
-    'os': 'Windows',
-    'os_version': '10',
-    'name': 'Firefox beta on Win10',
-    'build': 'puppeteer-build-2'
+  'browser': 'firefox',
+  'browser_version': 'latest-beta',
+  'os': 'Windows',
+  'os_version': '10',
+  'name': 'Firefox beta on Win10',
+  'build': 'puppeteer-build-2'
 },
 {
   'browser': 'edge',
