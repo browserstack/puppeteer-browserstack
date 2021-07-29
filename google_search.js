@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
 (async () => {
     const caps = {
-        'browserName': 'chrome',
+        'browser': 'chrome',
         'browser_version': 'latest',
         'os': 'os x',
         'os_version': 'big sur',
