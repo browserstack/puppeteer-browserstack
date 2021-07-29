@@ -41,7 +41,7 @@ async function testFn() {
     console.log(`BrowserStackLocal running: ${bsLocal.isRunning()}`);
 
     const caps = {
-        'browserName': 'chrome',
+        'browser': 'chrome',
         'browser_version': 'latest',
         'os': 'os x',
         'os_version': 'catalina',
