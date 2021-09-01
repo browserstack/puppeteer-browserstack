@@ -20,6 +20,7 @@ exports.config = {
   output: './output',
   helpers: {
     Puppeteer: {
+      windowSize: '1920x1080',
       chrome: {
         browserWSEndpoint: `wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps))}`
       }
