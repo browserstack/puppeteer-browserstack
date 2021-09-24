@@ -4,7 +4,18 @@ const { setHeadlessWhen } = require('@codeceptjs/configure');
 // export HEADLESS=true && npx codeceptjs run
 setHeadlessWhen(process.env.HEADLESS);
 
-const caps = {
+const caps_chrome = {
+  'browser': 'chrome',
+  'browser_version': 'latest',
+  'os': 'osx',
+  'os_version': 'catalina',
+  'name': 'Codecept test using Puppeteer',
+  'build': 'CodeceptJS Puppeteer on BrowserStack',
+  'browserstack.username': process.env.BROWSERSTACK_USERNAME || 'YOUR_USERNAME',
+  'browserstack.accessKey': process.env.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY'
+};
+
+const caps_firefox = {
   'browser': 'chrome',
   'browser_version': 'latest',
   'os': 'osx',
@@ -21,8 +32,20 @@ exports.config = {
   helpers: {
     Puppeteer: {
       chrome: {
-        browserWSEndpoint: `wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps))}`
+        browserWSEndpoint: `wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps_chrome))}`
+      },
+      chrome: {
+        browserWSEndpoint: `wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps_firefox))}`
       }
+    }
+  },
+  multiple: {
+    default: {
+      chunks: 4,
+      "browsers": [
+        "chrome",
+        "firefox"
+      ]
     }
   },
   include: {
