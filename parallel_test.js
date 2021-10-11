@@ -7,7 +7,7 @@ const main = async (cap) => {
     cap['browserstack.accessKey'] = process.env.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY';
 
     const browser = await puppeteer.connect({
-      browserWSEndpoint:`wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(cap))}`,
+      browserWSEndpoint:`wss://cdp.browserstack.com/puppeteer?caps=${encodeURIComponent(JSON.stringify(cap))}`,
     });
 
     const page = await browser.newPage();
