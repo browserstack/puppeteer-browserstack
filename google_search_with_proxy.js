@@ -22,7 +22,7 @@ bootstrap();
     };
     const browser = await puppeteer.connect({
     browserWSEndpoint:
-    `wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps))}`,
+    `wss://cdp.browserstack.com/puppeteer?caps=${encodeURIComponent(JSON.stringify(caps))}`,
     });
 
     /* 

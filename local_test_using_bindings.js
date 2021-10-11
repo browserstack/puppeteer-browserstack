@@ -54,7 +54,7 @@ async function testFn() {
 
     // Use `.connect()` to initiate an Automate session on BrowserStack
     const browser = await puppeteer.connect({
-        browserWSEndpoint: `wss://cdp.browserstack.com?caps=${encodeURIComponent(JSON.stringify(caps))}`,
+        browserWSEndpoint: `wss://cdp.browserstack.com/puppeteer?caps=${encodeURIComponent(JSON.stringify(caps))}`,
     });
     // BrowserStack specific code ends here
 
