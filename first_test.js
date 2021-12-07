@@ -31,7 +31,7 @@ const expect = require('chai').expect;
     const title = await page.title('');
     console.log(title);
     try {
-        expect(title).toEqual( 'BrowserStack at DuckDuckGo', 'Expected page title is incorrect!');
+        expect(title).toEqual("BrowserStack at DuckDuckGo", 'Expected page title is incorrect!');
         // following line of code is responsible for marking the status of the test on BrowserStack as 'passed'. You can use this code in your after hook after each test
         await page.evaluate(_ => {}, `browserstack_executor: ${JSON.stringify({action: 'setSessionStatus',arguments: {status: 'passed',reason: 'Title matched'}})}`);
     } catch {
