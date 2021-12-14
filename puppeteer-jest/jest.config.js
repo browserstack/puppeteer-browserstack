@@ -5,7 +5,7 @@
 
 module.exports = {
   rootDir: '.',
-    testTimeout: 20000,
+    testTimeout: 40000,
     testMatch: [
       '<rootDir>/*.test.js'
     ],
