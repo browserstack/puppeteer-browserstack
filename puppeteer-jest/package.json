@@ -10,7 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.0.6",
-    "jest-puppeteer": "^5.0.4",
+    "jest-puppeteer": "^6.0.3",
     "puppeteer": "^10.1.0"
   }
 }
