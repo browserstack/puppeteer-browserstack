@@ -17,8 +17,8 @@ You need BrowserStack credentials to be able to run Puppeteer tests. You have to
 
 1. Clone this repository
 2. Install the dependencies using `npm install`
-3. Replace `YOUR_USERNAME` and `YOUR_ACCESS_KEY` in `google_search.js` with your BrowserStack credentials
-3. Run the sample script using `node google_search.js`
+3. Replace `YOUR_USERNAME` and `YOUR_ACCESS_KEY` in `duckduckgo_search.js` with your BrowserStack credentials
+3. Run the sample script using `node duckduckgo_search.js`
 
 ## Test across multiple browser and OS versions in parallel
 
