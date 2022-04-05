@@ -7,9 +7,12 @@ const main = async (cap) => {
     cap['browserstack.accessKey'] = process.env.BROWSERSTACK_ACCESS_KEY || 'YOUR_ACCESS_KEY';
 
     const browser = await puppeteer.connect({
-      browserWSEndpoint:`wss://cdp.browserstack.com/puppeteer?caps=${encodeURIComponent(JSON.stringify(cap))}`,
+      browserWSEndpoint:`wss://cdp.browserstack.com/puppeteer?caps=${encodeURIComponent(JSON.stringify(cap))}`,  // The BrowserStack CDP endpoint gives you a `browser` instance based on the `caps` that you specified
     });
-
+    /* 
+    *  The BrowserStack specific code ends here. Following this line is your test script.
+    *  Here, we have a simple script that opens google.com, searches for the word BrowserStack and asserts the result.
+    */
     const page = await browser.newPage();
     await page.goto('https://www.duckduckgo.com');
     const element = await page.$('[name="q"]');
@@ -32,15 +35,15 @@ const main = async (cap) => {
 const capabilities = [
 {
   'browser': 'chrome',
-  'browser_version': 'latest',
+  'browser_version': 'latest',  // We support chrome v72 and above. You can choose `latest`, `latest-beta`, `latest-1`, `latest-2` and so on, in this capability
   'os': 'osx',
   'os_version': 'catalina',
-  'name': 'Chrome latest on Catalina',
+  'name': 'Chrome latest on Catalina',  // The name of your test and build. See browserstack.com/docs/automate/puppeteer/organize-tests for more details
   'build': 'puppeteer-build-2'
 },
 {
   'browser': 'firefox',
-  'browser_version': 'latest',
+  'browser_version': 'latest',  // We support firefox v86 and above. You can choose `latest`, `latest-beta`, `latest-1`, `latest-2` and so on, in this capability
   'os': 'osx',
   'os_version': 'catalina',
   'name': 'Firefox latest on Catalina',
@@ -48,7 +51,7 @@ const capabilities = [
 },
 {
   'browser': 'edge',
-  'browser_version': 'latest',
+  'browser_version': 'latest',  // We support edge v80 and above. You can choose `latest`, `latest-beta`, `latest-1`, `latest-2` and so on, in this capability
   'os': 'osx',
   'os_version': 'catalina',
   'name': 'Edge latest on Catalina',
@@ -79,7 +82,7 @@ const capabilities = [
   'build': 'puppeteer-build-2'
 }]
 
-//  The following code loops through the capabilities array defined above and runs your code against each environment that you have specified
+//  The following code loops through the capabilities array defined above and runs your code against each environment that you have specified in parallel
 capabilities.forEach(async (cap) => {
   await main(cap);
 });
