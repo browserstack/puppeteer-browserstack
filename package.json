@@ -7,7 +7,7 @@
   },
   "scripts": {
     "test": "npm run single && npm run local && npm run parallel",
-    "single": "node google_search.js",
+    "single": "node duckduckgo_search.js",
     "local": "node local_test_using_bindings.js",
     "parallel": "node parallel_test.js",
     "session_details": "node sample_session_details_API.js"
