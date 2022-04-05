@@ -9,8 +9,8 @@ describe("DuckDuckGo", () => {
   it('title should match BrowserStack at DuckDuckGo', async () => {
     const element = await page.$('[name="q"]');
     await element.click();
-    await element.type('BrowserStack');
-    await Promise.all([element.press('Enter'), page.waitForNavigation()]);
+    await element.type('BrowserStack\n');
+    await page.waitForNavigation();
     try {
       expect(await page.title()).toBe('BrowserStack at DuckDuckGo');
       await page.evaluate(_ => {}, `browserstack_executor: ${JSON.stringify({action: 'setSessionStatus',arguments: {status: 'passed',reason: 'Test assertion passed'}})}`);
