@@ -9,7 +9,8 @@ describe("DuckDuckGo", () => {
   it('title should match BrowserStack at DuckDuckGo', async () => {
     const element = await page.$('[name="q"]');
     await element.click();
-    await element.type('BrowserStack\n');
+    await element.type('BrowserStack');
+    await element.press('Enter');
     await page.waitForNavigation();
     try {
       expect(await page.title()).toBe('BrowserStack at DuckDuckGo');
