@@ -20,7 +20,7 @@ const expect = require('chai').expect;
 
     /* 
     *  The BrowserStack specific code ends here. Following this line is your test script.
-    *  Here, we have a simple script that opens google.com, searches for the word BrowserStack and asserts the result.
+    *  Here, we have a simple script that opens duckduckgo.com, searches for the word BrowserStack and asserts the result.
     */
     const page = await browser.newPage();
     await page.goto('https://www.duckduckgo.com');
