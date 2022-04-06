@@ -17,7 +17,8 @@ const main = async (cap) => {
     await page.goto('https://www.duckduckgo.com');
     const element = await page.$('[name="q"]');
     await element.click();
-    await element.type('BrowserStack\n');
+    await element.type('BrowserStack');
+    await element.press('Enter');
     await page.waitForNavigation();
     const title = await page.title('');
     console.log(title);
