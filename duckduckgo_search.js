@@ -1,5 +1,7 @@
 'use strict';
-const { strict } = require('once');
+Control + Shift + m
+ { strict } = require
+('once');
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect;
 (async () => {
