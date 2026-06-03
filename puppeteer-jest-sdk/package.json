@@ -6,8 +6,7 @@
   "scripts": {
     "test": "npx browserstack-node-sdk jest",
     "sample-test": "npx browserstack-node-sdk jest sample.test.js",
-    "local-test": "npx browserstack-node-sdk jest local.test.js",
-    "postinstall": "npm update browserstack-node-sdk"
+    "local-test": "npx browserstack-node-sdk jest local.test.js"
   },
   "author": "",
   "license": "ISC",
