@@ -20,22 +20,23 @@ describe('BrowserStack Sample', () => {
   it('adds the first product to the cart', async () => {
     await page.goto('https://bstackdemo.com/');
 
-    // Read the first product's name (mirrors XPath //*[@id="1"]/p).
-    const [productEl] = await page.$x('//*[@id="1"]/p');
-    const productText = await page.evaluate((el) => el.textContent, productEl);
+    // Read the first product's name (XPath //*[@id="1"]/p) — modern Puppeteer
+    // uses the ::-p-xpath() locator; page.$x() was removed in Puppeteer v22.
+    const productEl = await page.waitForSelector('::-p-xpath(//*[@id="1"]/p)');
+    const productText = await productEl.evaluate((el) => el.textContent);
 
-    // Click its "Add to cart" button (mirrors XPath //*[@id="1"]/div[4]).
-    const [addToCartBtn] = await page.$x('//*[@id="1"]/div[4]');
+    // Click its "Add to cart" button (XPath //*[@id="1"]/div[4]).
+    const addToCartBtn = await page.waitForSelector('::-p-xpath(//*[@id="1"]/div[4])');
     await addToCartBtn.click();
 
     // Wait for the cart pane to open.
     await page.waitForSelector('.float-cart__content');
 
     // Read the product name shown in the cart.
-    const [cartEl] = await page.$x(
-      '//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1]'
+    const cartEl = await page.waitForSelector(
+      '::-p-xpath(//*[@id="__next"]/div/div/div[2]/div[2]/div[2]/div/div[3]/p[1])'
     );
-    const productCartText = await page.evaluate((el) => el.textContent, cartEl);
+    const productCartText = await cartEl.evaluate((el) => el.textContent);
 
     expect(productCartText).toBe(productText);
   });
