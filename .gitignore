@@ -1,1 +1,11 @@
 node_modules
+
+# BrowserStack Node SDK sample
+.env
+local.log
+browserstack-logs/
+log/
+bin/
+obj/
+target/
+__pycache__/

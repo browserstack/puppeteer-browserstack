@@ -1,0 +1,22 @@
+{
+  "name": "puppeteer-jest-sdk",
+  "version": "1.0.0",
+  "description": "Sample Puppeteer + Jest tests run on BrowserStack via the BrowserStack Node SDK",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx browserstack-node-sdk jest",
+    "sample-test": "npx browserstack-node-sdk jest sample.test.js",
+    "local-test": "npx browserstack-node-sdk jest local.test.js",
+    "postinstall": "npm update browserstack-node-sdk"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "browserstack-local": "^1.5.5",
+    "browserstack-node-sdk": "latest"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "puppeteer": "^22.0.0"
+  }
+}

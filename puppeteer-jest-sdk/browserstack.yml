@@ -1,0 +1,26 @@
+userName: YOUR_USERNAME
+accessKey: YOUR_ACCESS_KEY
+projectName: BrowserStack Samples
+buildName: browserstack build
+buildIdentifier: '#${BUILD_NUMBER}'
+framework: jest
+platforms:
+  - os: OS X
+    osVersion: Big Sur
+    browserName: Chrome
+    browserVersion: latest
+  - os: Windows
+    osVersion: 10
+    browserName: Edge
+    browserVersion: latest
+  - deviceName: Samsung Galaxy S22 Ultra
+    browserName: chrome
+    osVersion: 12.0
+parallelsPerPlatform: 1
+browserstackAutomation: true
+browserstackLocal: true
+source: puppeteer-browserstack:sample-sdk:v1.0
+testObservability: true
+debug: false
+networkLogs: false
+consoleLogs: errors
