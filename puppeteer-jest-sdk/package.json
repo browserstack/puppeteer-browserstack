@@ -12,10 +12,11 @@
   "license": "ISC",
   "dependencies": {
     "browserstack-local": "^1.5.5",
-    "browserstack-node-sdk": "latest"
+    "selenium-webdriver": "4.28.1"
   },
   "devDependencies": {
     "jest": "^29.7.0",
-    "puppeteer": "^22.0.0"
+    "puppeteer": "^22.0.0",
+    "browserstack-node-sdk": "latest"
   }
 }
