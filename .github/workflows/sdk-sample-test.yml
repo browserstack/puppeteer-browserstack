@@ -10,6 +10,10 @@ on:
         description: 'The full commit id to build'
         required: true
 
+permissions:
+  contents: read       # checkout
+  checks: write        # github-script creates the status check
+
 jobs:
   sdk-sample:
     runs-on: ${{ matrix.os }}
